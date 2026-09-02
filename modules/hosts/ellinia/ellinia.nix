@@ -9,7 +9,7 @@
     networking.hostName = "ellinia";
     system.stateVersion = "26.05";
 
-    programs.nh.flake = "/home/frieren/.config/nix-scratch";
+    programs.nh.flake = "/home/frieren/.config/nix-dendritic";
   };
 
   flake.nixosConfigurations.ellinia = inputs.nixpkgs.lib.nixosSystem {
@@ -32,7 +32,8 @@
             home.username = "frieren";
             home.homeDirectory = "/home/frieren";
             home.stateVersion = "26.05";
-            programs.nh.flake = "/home/frieren/.config/nix-scratch";
+            # TODO: Change this to nix
+            programs.nh.flake = "/home/frieren/.config/nix-dendritic";
           };
         };
       }

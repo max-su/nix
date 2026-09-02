@@ -22,12 +22,12 @@
       url = "git+https://github.com/WhySoBad/hyprland-preview-share-picker?submodules=1";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-    # Has MacOS support as well https://gerg-l.github.io/spicetify-nix/usage.html
-    spicetify-nix.url = "github:Gerg-L/spicetify-nix";
 
     # General
     lazyvim.url = "github:pfassina/lazyvim-nix";
     vicinae.url = "github:vicinaehq/vicinae";
+    # Has MacOS support as well https://gerg-l.github.io/spicetify-nix/usage.html
+    spicetify-nix.url = "github:Gerg-L/spicetify-nix";
   };
 
   outputs = inputs:
