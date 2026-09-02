@@ -14,6 +14,9 @@
     boot.loader.efi.canTouchEfiVariables = true;
     programs.zsh.enable = true;
 
+    # Use latest kernel
+    boot.kernelPackages = pkgs.linuxPackages_latest;
+
     users.users.frieren = {
       isNormalUser = true;
       home = "/home/frieren";
@@ -23,6 +26,15 @@
     };
 
     programs.nh.flake = "/home/frieren/.config/nix";
+
+    # To make Noctalia’s wifi, bluetooth, power-profile, and battery feature available, please ensure the following NixOS options are enabled:
+    networking.networkmanager.enable = true;
+    hardware.bluetooth.enable = true;
+    services.power-profiles-daemon.enable = true; # or services.tuned.enable
+    services.upower.enable = true;
+
+    # MSI Afterburner
+    services.lact.enable = true;
   };
 
   flake.nixosConfigurations.ellinia = inputs.nixpkgs.lib.nixosSystem {

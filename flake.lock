@@ -33,6 +33,18 @@
         "type": "github"
       }
     },
+    "codelia": {
+      "flake": false,
+      "locked": {
+        "path": "git+ssh:/git@github.com:max-su/codelia.git",
+        "type": "path"
+      },
+      "original": {
+        "path": "git+ssh:/git@github.com:max-su/codelia.git",
+        "type": "path"
+      },
+      "parent": []
+    },
     "flake-compat": {
       "flake": false,
       "locked": {
@@ -725,6 +737,7 @@
     },
     "root": {
       "inputs": {
+        "codelia": "codelia",
         "flake-parts": "flake-parts",
         "home-manager": "home-manager",
         "hyprland": "hyprland",

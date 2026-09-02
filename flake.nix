@@ -28,6 +28,12 @@
     vicinae.url = "github:vicinaehq/vicinae";
     # Has MacOS support as well https://gerg-l.github.io/spicetify-nix/usage.html
     spicetify-nix.url = "github:Gerg-L/spicetify-nix";
+    # Licensed font, fetch as a source tree, disable feature on first nixos-build as
+    # ssh key has yet to be added to github account
+    codelia = {
+      url = "git+ssh://git@github.com:max-su/codelia.git";
+      flake = false;
+    };
   };
 
   outputs = inputs:
