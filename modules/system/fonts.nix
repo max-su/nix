@@ -1,5 +1,14 @@
-# modules/fonts.nix
-{ self, inputs, ... }:
+{ self,
+  inputs,
+  ...
+}:
+let
+  fontsModule = { config, pkgs, ... }: {
+    nixpkgs.overlays = [ self.overlays.fonts ];
+    fonts.packages = [ pkgs.codelia-nerd-font ];
+    fonts.fontconfig.enable = true;
+  };
+in
 {
   flake.overlays.fonts = final: prev: {
     codelia-nerd-font = final.stdenvNoCC.mkDerivation {
@@ -13,4 +22,6 @@
       '';
     };
   };
+
+  flake.modules.nixos.base.imports = [ fontsModule ];
 }

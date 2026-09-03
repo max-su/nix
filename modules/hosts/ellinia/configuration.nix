@@ -25,10 +25,6 @@
       };
       kernelPackages = pkgs.linuxPackages_latest;
     };
-
-    nixpkgs.overlays = [ config.flake.overlays.fonts ];
-    fonts.packages = [ pkgs.codelia-nerd-font ];
-    fonts.fontconfig.enable = true;
   };
 
   flake.nixosConfigurations.ellinia = inputs.nixpkgs.lib.nixosSystem {
