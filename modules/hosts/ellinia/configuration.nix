@@ -1,6 +1,5 @@
 # Configuration file for my 2025 machine, B650E PG-ITX WiFi, 9800X3D + 5070TI
 {
-  config,
   inputs,
   ...
 }:
