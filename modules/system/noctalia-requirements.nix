@@ -1,4 +1,4 @@
-{ _ }:
+{ ... }:
 let
   noctaliaRequirements = {
     networking.networkmanager.enable = true;
