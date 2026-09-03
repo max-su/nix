@@ -26,12 +26,6 @@
       };
       kernelPackages = pkgs.linuxPackages_latest;
     };
-
-    # Nvidia drivers + MSI Afterburner
-    services.lact.enable = true;
-    hardware.graphics.enable = true;
-    services.xserver.videoDrivers = [ "nvidia" ];
-    hardware.nvidia.open = true;
   };
 
   flake.nixosConfigurations.ellinia = inputs.nixpkgs.lib.nixosSystem {
