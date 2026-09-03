@@ -31,7 +31,7 @@
     # Licensed font, fetch as a source tree, disable feature on first nixos-build as
     # ssh key has yet to be added to github account
     codelia = {
-      url = "git+ssh://git@github.com:max-su/codelia.git";
+      url = "git+ssh://git@github.com/max-su/codelia.git";
       flake = false;
     };
   };

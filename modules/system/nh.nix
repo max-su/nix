@@ -1,6 +1,6 @@
 { inputs, ... }:
 {
-  flake.modules.nixos.nh = {
+  flake.modules.nixos.base = {
     programs.nh = {
       enable = true;
       clean.enable = true;

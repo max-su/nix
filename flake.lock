@@ -36,14 +36,18 @@
     "codelia": {
       "flake": false,
       "locked": {
-        "path": "git+ssh:/git@github.com:max-su/codelia.git",
-        "type": "path"
+        "lastModified": 1788381451,
+        "narHash": "sha256-M/8/pOb19QhECD0zGhVL73u8aMFAG2Tx0gJaZD25nas=",
+        "ref": "refs/heads/main",
+        "rev": "796e228b9e62becaeaebbe5211af4be92a0da77e",
+        "revCount": 1,
+        "type": "git",
+        "url": "ssh://git@github.com/max-su/codelia.git"
       },
       "original": {
-        "path": "git+ssh:/git@github.com:max-su/codelia.git",
-        "type": "path"
-      },
-      "parent": []
+        "type": "git",
+        "url": "ssh://git@github.com/max-su/codelia.git"
+      }
     },
     "flake-compat": {
       "flake": false,
