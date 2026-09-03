@@ -34,6 +34,7 @@
       url = "git+ssh://git@github.com/max-su/codelia.git";
       flake = false;
     };
+    nix-yazi-flavors.url = "github:aguirre-matteo/nix-yazi-flavors";
   };
 
   outputs = inputs:

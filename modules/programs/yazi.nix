@@ -4,11 +4,15 @@
   ...
 }:
 {
-  flake.modules.homeManager.yazi = {
-    nixpkgs.overlays = [
-      inputs.nix-yazi-flavors.overlays.default
-    ];
+  flake.modules.nixos.base.imports = [
+    {
+      nixpkgs.overlays = [
+        inputs.nix-yazi-flavors.overlays.default
+      ];
+    }
+  ];
 
+  flake.modules.homeManager.yazi = {
     home.packages = [
       pkgs.yazi
     ];
