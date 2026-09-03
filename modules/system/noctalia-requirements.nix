@@ -1,6 +1,6 @@
 { _ }:
 let
-  networking = {
+  noctaliaRequirements = {
     networking.networkmanager.enable = true;
     hardware.bluetooth.enable = true;
     services.power-profiles-daemon.enable = true;
@@ -8,5 +8,5 @@ let
   };
 in
 {
-  flake.modules.nixos.base.imports = [ networking ];
+  flake.modules.nixos.base.imports = [ noctaliaRequirements ];
 }
