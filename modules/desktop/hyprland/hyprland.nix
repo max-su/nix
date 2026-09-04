@@ -12,6 +12,12 @@ let
     };
   };
   homeManager = { lib, ... } : {
+    home.sessionVariables = {
+      NIXOS_OZONE_WL = "1";
+      # https://discourse.nixos.org/t/nixos-ozone-wl-1-seemingly-not-having-any-affect/56776/2
+      ELECTRON_OZONE_PLATFORM_HINT = "wayland";
+    };
+
     wayland.windowManager.hyprland = {
       enable = true;
       package = null;
