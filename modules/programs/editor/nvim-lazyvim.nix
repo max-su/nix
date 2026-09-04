@@ -13,6 +13,10 @@ let
     };
   };
   homeManager = {
+    pkgs,
+    ...
+  }:
+  {
     imports = [
       inputs.lazyvim.homeManagerModules.default
     ];
