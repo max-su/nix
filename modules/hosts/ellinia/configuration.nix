@@ -35,6 +35,22 @@
     };
 
   flake.nixosConfigurations.ellinia = inputs.nixpkgs.lib.nixosSystem {
-    modules = [ config.flake.modules.nixos."hosts/ellinia" ];
+    modules = [
+      config.flake.modules.nixos."hosts/ellinia"
+      inputs.home-manager.nixosModules.home-manager
+      {
+        home-manager = {
+          useGlobalPkgs = true;
+          useUserPackages = true;
+          extraSpecialArgs = { inherit inputs; };
+          users.frieren = {
+            imports = [
+              config.flake.modules.homeManager.frieren
+              config.flake.modules.homeManager.ellinia-monitors
+            ];
+          };
+        };
+      }
+    ];
   };
 }
