@@ -15,6 +15,7 @@
         ./_hardware-configuration.nix
         config.flake.modules.nixos.base
         config.flake.modules.nixos.nvidia
+        config.flake.modules.nixos.gaming
       ];
 
       networking.hostName = "ellinia";
