@@ -1,6 +1,6 @@
 { ... }:
-{
-  flake.modules.nixos.gaming = {
+let
+  nixos = {
     programs.steam = {
       enable = true;
       remotePlay.openFirewall = true;
@@ -10,4 +10,21 @@
     };
     programs.gamemode.enable = true;
   };
+
+  homeManager = {
+    programs.mangohud = {
+      enable = true;
+      settings = {
+        vram = true;
+        fps = true;
+        frametime = true;
+        no_display = false;
+        gpu_list = "0";
+      };
+    };
+  };
+in
+{
+  flake.modules.nixos.gaming = nixos;
+  flake.modules.homeManager.gaming = homeManager;
 }
