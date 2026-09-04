@@ -48,6 +48,7 @@
             imports = [
               config.flake.modules.homeManager.frieren
               config.flake.modules.homeManager.ellinia-monitors
+              config.flake.modules.homeManager.gaming
             ];
           };
         };
