@@ -1,7 +1,7 @@
 { ... }:
 let
   nixos = { programs.starship.enable = true; };
-  home = {
+  homeManager = {
     programs.starship = {
       enable = true;
       enableZshIntegration = true;
@@ -10,5 +10,5 @@ let
 in
 {
   flake.modules.nixos.base.imports = [ nixos ];
-  flake.modules.homeManager.frieren.imports = [ home ];
+  flake.modules.homeManager.frieren.imports = [ homeManager ];
 }
