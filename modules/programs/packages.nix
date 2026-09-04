@@ -1,6 +1,7 @@
-{ inputs, ... }:
+{ inputs, self, ... }:
 let
-  packages = { pkgs, ... }: {
+  # System Wide Installed Packages
+  system = { config, pkgs, ... }: {
     environment.systemPackages = with pkgs; [
       neovim
       git
@@ -15,12 +16,7 @@ let
       wl-clipboard
       clipse
       vesktop
-      spotify
-
-      (yazi.override {
-        _7zz = _7zz-rar;
-      })
-
+      (yazi.override { _7zz = _7zz-rar; })
       poppler-utils
       ffmpegthumbnailer
       statix
@@ -36,11 +32,21 @@ let
       stremio-linux-shell
       obs-studio
       erdtree
+      papirus-icon-theme
+      maplestory-cursor
+      pyright
+      ruff
+    ];
+  };
+
+  # user/frieren's Packages
+  home = { config, pkgs, ... }: {
+    home.packages = [
+      (self.lib.forceWayland pkgs config.programs.spicetify.spicedSpotify "spotify")
     ];
   };
 in
 {
-  flake.modules.nixos.base.imports = [
-    packages
-  ];
+  flake.modules.nixos.base.imports = [ system ];
+  flake.modules.homeManager.frieren.imports = [ home ];
 }
