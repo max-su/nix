@@ -1,8 +1,4 @@
-{ 
-  inputs,
-  pkgs,
-  ...
-}:
+{ inputs, ... }:
 {
   flake.modules.nixos.base.imports = [
     {
@@ -12,19 +8,19 @@
     }
   ];
 
-  flake.modules.homeManager.yazi = {
-    home.packages = [
-      pkgs.yazi
-    ];
-
-    programs.yazi = {
-      enable = true;
-      flavors = pkgs.yaziFlavors;
-
-      theme.flavor = {
-        dark = "kanagawa";
-        light = "catppuccin-latte";
+  flake.modules.homeManager.frieren.imports = [
+    ({ pkgs, ... }: {
+      home.packages = [
+        pkgs.yazi
+      ];
+      programs.yazi = {
+        enable = true;
+        flavors = pkgs.yaziFlavors;
+        theme.flavor = {
+          dark = "kanagawa";
+          light = "catppuccin-latte";
+        };
       };
-    };
-  };
+    })
+  ];
 }
