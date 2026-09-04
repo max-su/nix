@@ -38,6 +38,7 @@
     modules = [
       config.flake.modules.nixos."hosts/ellinia"
       inputs.home-manager.nixosModules.home-manager
+      inputs.vicinae.nixosModules.default
       {
         home-manager = {
           useGlobalPkgs = true;
