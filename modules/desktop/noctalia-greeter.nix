@@ -5,6 +5,7 @@
 let
   nixos = { pkgs, ... }: {
     imports = [ inputs.noctalia-greeter.nixosModules.default ];
+    # TODO: change cursor later, validate if work on resumption from suspension, theme
     programs.noctalia-greeter = {
       enable = true;
       # Optional configuration
