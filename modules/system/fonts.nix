@@ -20,5 +20,5 @@ let
   };
 in
 {
-  flake.modules.nixos.base.imports = [ fontsModule ];
+  flake.modules.nixos.codelia-font = fontsModule;
 }
