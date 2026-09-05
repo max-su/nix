@@ -56,29 +56,6 @@ let
               '')
             ];
           }
-          # https://codeberg.org/LGFae/awww
-          {
-            _args = [
-              "hyprland.start"
-              (lib.generators.mkLuaInline ''
-                function()
-                  hl.exec_cmd("awww-daemon")
-                end
-              '')
-            ];
-          }
-          {
-            _args = [
-              "hyprland.start"
-              (lib.generators.mkLuaInline ''
-                function()
-                  hl.exec_cmd("noctalia")
-                  hl.exec_cmd("noctalia msg wallpaper-set DP-2 ~/.config/nix/assets/Vertical/casual_shorts.jpg");
-                  hl.exec_cmd("noctalia msg wallpaper-set DP-3 ~/.config/nix/assets/Landscape/frieren_sky_flowers.jpg");
-                end
-              '')
-            ];
-          }
           {
             _args = [
               "hyprland.start"

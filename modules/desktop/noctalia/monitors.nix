@@ -1,6 +1,15 @@
+# This module also carries the burden of launching noctalia so as to avoid race conditions with
+# setting wallpapers
+#
+# Every new host with different monitor configurations needs to copy this module and update
+# the wallpapers correspondingly
 { self, ... }:
 let
   homeManagerEllinia = {
+    lib,
+    ...
+  }:
+  {
     programs.noctalia.settings.wallpaper = {
       enabled = true;
       per_monitor_directories = true;
@@ -11,6 +20,21 @@ let
         directory = self + "/assets/Vertical";
       };
     };
+    # Noctalia is not managed by systemd
+    wayland.windowManager.hyprland.settings.on = [
+      {
+        _args = [
+          "hyprland.start"
+          (lib.generators.mkLuaInline ''
+            function()
+              hl.exec_cmd("noctalia")
+              hl.exec_cmd("noctalia msg wallpaper-set DP-2 ~/.config/nix/assets/Vertical/casual_shorts.jpg");
+              hl.exec_cmd("noctalia msg wallpaper-set DP-3 ~/.config/nix/assets/Landscape/frieren_sky_flowers.jpg");
+            end
+          '')
+        ];
+      }
+    ];
   };
 in
 {
