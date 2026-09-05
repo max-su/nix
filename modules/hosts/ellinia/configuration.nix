@@ -54,6 +54,8 @@
               # noctalia
               config.flake.modules.homeManager.ellinia-wallpaper
               config.flake.modules.homeManager.gaming
+              # Music player unneeded on laptop
+              config.flake.modules.homeManager.rmpc
             ];
           };
         };
