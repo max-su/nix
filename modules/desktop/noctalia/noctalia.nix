@@ -17,14 +17,6 @@ let
           screenshot.show_cursor = true;
         };
         nightlight.enabled = true;
-        idle = {
-          behavior_order = [
-            "lock"
-            "screen-off"
-            "suspend"
-          ];
-          pre_action_fade_seconds = 3.0;
-        };
         bar.default = {
           position = "top";
           background_opacity = 0.0;

@@ -15,6 +15,7 @@
         ./_hardware-configuration.nix
         config.flake.modules.nixos.base
         config.flake.modules.nixos.nvidia
+        config.flake.modules.nixos.hyprland-suspend-fix-nvidia
         config.flake.modules.nixos.gaming
         # Only enable if ssh key is set up for max-su, private repo
         config.flake.modules.nixos.codelia-font

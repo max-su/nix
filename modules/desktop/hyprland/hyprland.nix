@@ -26,6 +26,7 @@ let
       configType = "lua";
 
       extraConfig = ''
+      hl.config ({ misc = { allow_session_lock_restore = 1 }})
       hl.config({
         xwayland = {
           force_zero_scaling = true,

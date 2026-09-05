@@ -5,6 +5,7 @@
 {
   flake.modules.nixos.nvidia = {
     hardware.graphics.enable = true;
+    hardware.nvidia.powerManagement.enable = true;
     services.xserver.videoDrivers = [ "nvidia" ];
     hardware.nvidia.open = true;
     # MSI Afterburner
