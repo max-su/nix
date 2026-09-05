@@ -18,7 +18,7 @@
   - [flake-parts](https://github.com/hercules-ci/flake-parts)
   - [import-tree](https://github.com/denful/import-tree)
   - sweat and human labor these <!--LOC-->2370<!--/LOC--> lines were fun to write
-  - a lot of rose pine and my sorrow pining for a tiling window manager again b/c god forbid a person use a mouse
+  - a lot of theme/rose-pine and deep sorrow pining for a tiling window manager again b/c god forbid a person use a mouse
   - the willpower to write nix this language is oh so wonderful (it makes me miss haskell)
 
 ## Dendritic vs Standard (configuration.nix + home.nix)
