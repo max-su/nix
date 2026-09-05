@@ -22,7 +22,8 @@
   - the willpower to write nix this language is oh so wonderful (it makes me miss haskell)
 
 ## Dendritic vs Standard (configuration.nix + home.nix)
-These code stubs aim to elucidate how to decompose a configuration.nix + home.nix into modules following the dendritic pattern.
+These code stubs aim to elucidate how to decompose a monolithic `configuration.nix` + `home.nix` into modules following the dendritic pattern.
+
 
 [flake.nix](https://github.com/max-su/nix/blob/main/flake.nix) is the entry for the package, and [modules/hosts/ellinia/configuration.nix](https://github.com/max-su/nix/blob/e358231c335f1d1856a446d73e760094c54fae80/modules/hosts/ellinia/configuration.nix#L37) defines the magical `inputs.nixpkgs.lib.nixosSystem` that makes **ellinia** exist in more than my imagination
 
