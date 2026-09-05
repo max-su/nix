@@ -35,7 +35,6 @@ let
       papirus-icon-theme
       maplestory-cursor
       pyright
-      ruff
     ];
   };
 
