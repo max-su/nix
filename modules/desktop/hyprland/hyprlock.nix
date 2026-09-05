@@ -42,7 +42,7 @@ let
           {
             monitor = "";
             text = ''cmd[update:1000] echo "$(date +"%A, %B %d")"'';
-            color = "rgb(144, 140, 170)"; # subtle
+            color = "rgb(200, 111, 135)";
             font_size = 22;
             font_family = "Codelia Nerd Font";
             position = "0, 120";
