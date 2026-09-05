@@ -3,6 +3,7 @@ let
   homeManager = {
     programs.noctalia = {
       enable = true;
+      systemd.enable = true;
       settings = {
         widget.clock = {
           format = "{:%A} {:%H:%M}";
