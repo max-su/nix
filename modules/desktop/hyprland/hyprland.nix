@@ -216,6 +216,12 @@ let
           }
           {
             _args =[
+              "ALT + D"
+              (lib.generators.mkLuaInline ''hl.dsp.exec_cmd("noctalia msg media next")'')
+            ];
+          }
+          {
+            _args =[
               "ALT + E"
               (lib.generators.mkLuaInline ''hl.dsp.exec_cmd("kitty -e yazi")'')
             ];
