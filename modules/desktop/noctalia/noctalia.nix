@@ -25,23 +25,6 @@ let
           ];
           pre_action_fade_seconds = 3.0;
         };
-        idle.behavior = {
-          screen-off = {
-            enabled = true;
-            action = "screen_off";
-            timeout = 300;
-          };
-          lock = {
-            enabled = true;
-            action = "lock";
-            timeout = 600;
-          };
-          suspend = {
-            enabled = true;
-            action = "lock_and_suspend";
-            timeout = 900;
-          };
-        };
         bar.default = {
           position = "top";
           background_opacity = 0.0;
