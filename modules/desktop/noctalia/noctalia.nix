@@ -13,6 +13,7 @@ let
           polkit_agent = true;
           screen_time_enabled = true;
           font_family = "Codelia Nerd Font";
+          screenshot.show_cursor = true;
         };
         nightlight.enabled = true;
         idle.behavior = {
