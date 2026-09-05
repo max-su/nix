@@ -11,6 +11,7 @@ let
       firefox
       ripgrep
       fd
+      jq
       btop
       fastfetch
       wl-clipboard
@@ -34,6 +35,7 @@ let
       erdtree
       papirus-icon-theme
       maplestory-cursor
+      python3
       pyright
     ];
   };
