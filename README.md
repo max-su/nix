@@ -19,9 +19,17 @@
   - [import-tree](https://github.com/denful/import-tree)
   - sweat and human labor those <!--LOC-->2315<!--/LOC--> lines were fun to write
   - a lot of rose pine and my sorrow pining for a tiling window manager again b/c god forbid a person use a mouse
+  - the willpower to write nix this language is oh so wonderful (it makes me miss haskell)
 
 ## Dendritic vs Standard (configuration.nix + home.nix)
-The convention for the modules written are generally to add them to the 
+These code stubs aim to elucidate how to decompose a configuration.nix + home.nix into modules following the dendritic pattern.
+
+[flake.nix](https://github.com/max-su/nix/blob/main/flake.nix) is the entry for the package, and [modules/hosts/ellinia/configuration.nix](https://github.com/max-su/nix/blob/e358231c335f1d1856a446d73e760094c54fae80/modules/hosts/ellinia/configuration.nix#L37) defines the magical `inputs.nixpkgs.lib.nixosSystem` that makes **ellinia** exist in more than my imagination
+
+> *"Magic is a world of visual imagination. Can you imagine defeating a mage who controls water in the rain? At the very least, I can't."*
+>
+> ~ **Frieren**
+
 ```nix
 # Dendritic Pattern module
 # ./modules/desktop/hyprland/hyprland.nix
@@ -184,5 +192,4 @@ in
 
 ### Links for the poor souls w/ brain worms that want to try their hand at NixOS
 - [Noogle](https://noogle.dev/) - Nix function search
-- [Dendritic Design with flake-parts](https://github.com/Doc-Steve/dendritic-design-with-flake-parts/wiki/FAQ)
 - [Home Manager Configuration](https://mynixos.com/home-manager/options) - home-manager module options/schema
