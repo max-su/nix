@@ -17,7 +17,7 @@
 ## Requirements
   - [flake-parts](https://github.com/hercules-ci/flake-parts)
   - [import-tree](https://github.com/denful/import-tree)
-  - sweat and human labor those <!--LOC-->2315<!--/LOC--> lines were fun to write
+  - sweat and human labor those <!--LOC-->2370<!--/LOC--> lines were fun to write
   - a lot of rose pine and my sorrow pining for a tiling window manager again b/c god forbid a person use a mouse
 
 ## Dendritic vs Standard (configuration.nix + home.nix)
