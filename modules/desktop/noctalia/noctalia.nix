@@ -16,10 +16,30 @@ let
           screenshot.show_cursor = true;
         };
         nightlight.enabled = true;
+        idle = {
+          behavior_order = [
+            "lock"
+            "screen-off"
+            "suspend"
+          ];
+          pre_action_fade_seconds = 3.0;
+        };
         idle.behavior = {
-          lock = { enabled = true; timeout = 600; };
-          screen-off = { enabled = true; timeout = 660; };
-          suspend = { enabled = true; timeout = 900; };
+          screen-off = {
+            enabled = true;
+            action = "screen_off";
+            timeout = 300;
+          };
+          lock = {
+            enabled = true;
+            action = "lock";
+            timeout = 600;
+          };
+          suspend = {
+            enabled = true;
+            action = "lock_and_suspend";
+            timeout = 900;
+          };
         };
         bar.default = {
           position = "top";
