@@ -24,7 +24,6 @@
 ## Dendritic vs Standard (configuration.nix + home.nix)
 These code stubs aim to elucidate how to decompose a monolithic `configuration.nix` + `home.nix` into modules following the dendritic pattern.
 
-
 [flake.nix](https://github.com/max-su/nix/blob/main/flake.nix) is the entry for the package, and [modules/hosts/ellinia/configuration.nix](https://github.com/max-su/nix/blob/e358231c335f1d1856a446d73e760094c54fae80/modules/hosts/ellinia/configuration.nix#L37) defines the magical `inputs.nixpkgs.lib.nixosSystem` that makes **ellinia** exist in more than my imagination
 
 > *"Magic is a world of visual imagination. Can you imagine defeating a mage who controls water in the rain? At the very least, I can't."*
@@ -95,7 +94,9 @@ let
   };
 in
 {
-  # It looks like assignment but it's .append() for those familiar with python
+  # It looks like assignment but it is .append() for those familiar with python
+  # flake.modules.nixos.base.imports.append(nixos);
+
   # Add the function to the new module that's equivalent to "configuration.nix"
   flake.modules.nixos.base.imports = [ nixos ];
   # Add the function to the new module that's equivalent to "home.nix"
