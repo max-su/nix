@@ -47,7 +47,10 @@
           users.frieren = {
             imports = [
               config.flake.modules.homeManager.frieren
+              # hyprland
               config.flake.modules.homeManager.ellinia-monitors
+              # noctalia
+              config.flake.modules.homeManager.ellinia-wallpaper
               config.flake.modules.homeManager.gaming
             ];
           };
