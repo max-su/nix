@@ -20,6 +20,169 @@
   - sweat and human labor those <!--LOC-->2315<!--/LOC--> lines were fun to write
   - a lot of rose pine and my sorrow pining for a tiling window manager again b/c god forbid a person use a mouse
 
-### Links I found helpful
-- [Noogle](https://noogle.dev/) — Nix function search
+## Dendritic vs Standard (configuration.nix + home.nix)
+The convention for the modules written are generally to add them to the 
+```nix
+# Dendritic Pattern module
+# ./modules/desktop/hyprland/hyprland.nix
+{
+  inputs,
+  ...
+}:
+let
+  # This can either be a function like it is currently or an attribute set
+  nixos = { pkgs, ... } : {
+    programs.hyprland = {
+      enable = true;
+      withUWSM = true;
+      package = inputs.hyprland.packages.${pkgs.stdenv.hostPlatform.system}.hyprland;
+      portalPackage= inputs.hyprland.packages.${pkgs.stdenv.hostPlatform.system}.xdg-desktop-portal-hyprland;
+    };
+  };
+  # 
+  nixosAttrSet = {
+    programs.hyprland = {
+      enable = true;
+      withUWSM = true;
+    };
+  };
+  homeManager = { lib, ... } : {
+    home.sessionVariables = {
+      NIXOS_OZONE_WL = "1";
+      # https://discourse.nixos.org/t/nixos-ozone-wl-1-seemingly-not-having-any-affect/56776/2
+      ELECTRON_OZONE_PLATFORM_HINT = "wayland";
+    };
+
+    wayland.windowManager.hyprland = {
+      enable = true;
+      package = null;
+      portalPackage = null;
+      systemd.enable = false;
+      configType = "lua";
+
+      settings = {
+        config = {
+          general = {
+            gaps_out = 8;
+          };
+          decoration = {
+            rounding = 10;
+            active_opacity = 0.8;
+            inactive_opacity = 0.75;
+          };
+        };
+        bind = [
+          {
+            _args = [
+              "ALT + SHIFT + F12"
+              (lib.generators.mkLuaInline ''
+                hl.dsp.exec_cmd("hyprctl activewindow > /tmp/activewindow.txt")
+              '')
+            ];
+          }
+        ];
+      };
+    };
+  };
+in
+{
+  # It looks like assignment but it's .append() for those familiar with python
+  # Add the function to the new module that's equivalent to "configuration.nix"
+  flake.modules.nixos.base.imports = [ nixos ];
+  # Add the function to the new module that's equivalent to "home.nix"
+  flake.modules.homeManager.frieren.imports = [ homeManager ];
+}
+```
+
+```nix
+# configuration.nix
+{ inputs, config, pkgs, ... }:
+
+{
+  # flake.modules.nixos.base.imports = [ nixos ];
+  # flake.modules.nixos.base.imports
+  imports =
+    [ # Include the results of the hardware scan.
+      ./hardware-configuration.nix
+      inputs.noctalia-greeter.nixosModules.default
+    ];
+  # --------------------------------------------
+  programs = {
+    hyprland = {
+      enable = true;
+      withUWSM = true;
+      package = inputs.hyprland.packages.${pkgs.stdenv.hostPlatform.system}.hyprland;
+      portalPackage= inputs.hyprland.packages.${pkgs.stdenv.hostPlatform.system}.xdg-desktop-portal-hyprland;
+    };
+  };
+  # --------------------------------------------
+  system.stateVersion = "26.05"; # Did you read the comment?
+  home-manager.backupFileExtension = "backup";
+}
+```
+
+```nix
+# home.nix
+{ config, pkgs, inputs, lib,  ... }:
+{
+  home = {
+    # Home Manager needs a bit of information about you and the
+    # paths it should manage.
+    username = "frieren";
+    homeDirectory = "/home/frieren";
+    # This value determines the Home Manager release that your
+    # configuration is compatible with. This helps avoid breakage
+    # when a new Home Manager release introduces backwards
+    # incompatible changes.
+    #
+    # You can update Home Manager without changing this value. See
+    # the Home Manager release notes for a list of state version
+    # changes in each release.
+    stateVersion = "26.05";
+  };
+  # flake.modules.homeManager.frieren.imports = [ homeManager ];
+  # flake.modules.homeManager.frieren.imports
+  imports = [ 
+    inputs.lazyvim.homeManagerModules.default
+    inputs.spicetify-nix.homeManagerModules.default
+    inputs.vicinae.homeManagerModules.default
+  ];
+  # --------------------------------------------
+  wayland.windowManager.hyprland = {
+    enable = true;
+    package = null;
+    portalPackage = null;
+    systemd.enable = false;
+    configType = "lua";
+
+    settings = {
+      config = {
+        general = {
+          gaps_out = 8;
+        };
+        decoration = {
+          rounding = 10;
+          active_opacity = 0.8;
+          inactive_opacity = 0.75;
+        };
+      };
+      bind = [
+        {
+          _args = [
+            "ALT + SHIFT + F12"
+            (lib.generators.mkLuaInline ''
+              hl.dsp.exec_cmd("hyprctl activewindow > /tmp/activewindow.txt")
+            '')
+          ];
+        }
+      ];
+    };
+  };
+  # --------------------------------------------
+}
+```
+
+### Links for the poor souls w/ brain worms that want to try their hand at NixOS
+- [Noogle](https://noogle.dev/) - Nix function search
 - [Dendritic Design with flake-parts](https://github.com/Doc-Steve/dendritic-design-with-flake-parts/wiki/FAQ)
+- [Home Manager Configuration](https://mynixos.com/home-manager/options) - home-manager module options/schema
