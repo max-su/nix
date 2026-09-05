@@ -8,7 +8,6 @@ let
       kitty
       xdg-desktop-portal-hyprland
       xdg-desktop-portal-gtk
-      firefox
       ripgrep
       fd
       jq
