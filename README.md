@@ -12,7 +12,7 @@
 </p>
 
 ## **ellinia** (NixOS): [Hyprland](https://hyprland.org) + [Noctalia](https://docs.noctalia.dev)
-  [![Screenshot](assets/screenshot.png)](assets/screenshot/rice.png)
+  [![Screenshot](assets/screenshots/rice.png)](assets/screenshots/rice.png)
 
 ## Requirements
   - [flake-parts](https://github.com/hercules-ci/flake-parts)
