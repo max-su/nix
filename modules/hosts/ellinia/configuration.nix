@@ -52,7 +52,6 @@
               # noctalia
               config.flake.modules.homeManager.ellinia-wallpaper
               config.flake.modules.homeManager.gaming
-              config.flake.modules.homeManager.hyprlock
             ];
           };
         };

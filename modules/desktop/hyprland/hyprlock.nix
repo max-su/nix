@@ -88,5 +88,5 @@ let
   };
 in
 {
-  flake.modules.homeManager.hyprlock = homeManager;
+  flake.modules.homeManager.frieren.imports = [ homeManager ];
 }
