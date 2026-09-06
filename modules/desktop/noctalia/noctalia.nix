@@ -1,8 +1,16 @@
-{ ... }:
+{
+  inputs,
+  ...
+}:
 let
   homeManager = {
+    pkgs,
+    ...
+  }:
+  {
     programs.noctalia = {
       enable = true;
+      package = inputs.noctalia.packages.${pkgs.system}.default;
       systemd.enable = false;
       settings = {
         widget.clock = {
