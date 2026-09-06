@@ -13,6 +13,8 @@ let
       jq
       btop
       fastfetch
+      grim
+      slurp
       wl-clipboard
       clipse
       vesktop

@@ -242,7 +242,7 @@ let
           {
             _args = [
               "ALT + SHIFT + S"
-              (lib.generators.mkLuaInline ''hl.dsp.exec_cmd("noctalia msg screenshot-region")'')
+              (lib.generators.mkLuaInline ''hl.dsp.exec_cmd("grim -g \"$(slurp)\" - | tee ~/Pictures/screenshots/screenshot-$(date +%Y%m%d-%H%M%S).png | wl-copy")'')
             ];
           }
           {
