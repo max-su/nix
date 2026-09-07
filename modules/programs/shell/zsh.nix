@@ -10,7 +10,9 @@ let
       autosuggestion.enable = true;
       syntaxHighlighting.enable = true;
       shellAliases = {
-        ll = "ls -l";
+        ll = "eza -l --icons --git";
+        la = "eza -la --icons --git";
+        lt = "eza --tree --icons";
         ga = "git add";
         gc = "git commit";
         gd = "git diff";

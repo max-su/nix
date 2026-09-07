@@ -35,6 +35,12 @@ let
           rust.enable = true;
           go.enable = true;
         };
+        editor = {
+          fzf.enable = true;
+        };
+        coding = {
+          mini-surround.enable = true;
+        };
       };
 
       # IMPORTANT: Extras don't install treesitter parsers automatically

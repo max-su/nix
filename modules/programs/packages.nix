@@ -38,6 +38,9 @@ let
       maplestory-cursor
       python3
       pyright
+
+      bat
+      eza
     ];
   };
 
