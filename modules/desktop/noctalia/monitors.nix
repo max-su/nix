@@ -27,9 +27,16 @@ let
           "hyprland.start"
           (lib.generators.mkLuaInline ''
             function()
-              hl.exec_cmd("noctalia")
-              hl.exec_cmd("noctalia msg wallpaper-set DP-2 ~/.config/nix/assets/Vertical/casual_shorts.jpg");
-              hl.exec_cmd("noctalia msg wallpaper-set DP-3 ~/.config/nix/assets/Landscape/frieren_sky_flowers.jpg");
+              hl.exec_cmd([[
+                for i in $(seq 1 20); do
+                  if noctalia msg status >/dev/null 2>&1; then
+                    break
+                  fi
+                  sleep 0.125
+                done
+                noctalia msg wallpaper-set DP-2 ~/.config/nix/assets/Vertical/casual_shorts.jpg
+                noctalia msg wallpaper-set DP-3 ~/.config/nix/assets/Landscape/frieren_sky_flowers.jpg
+              ]])
             end
           '')
         ];

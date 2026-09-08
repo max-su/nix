@@ -6,6 +6,7 @@ let
       settings = {
         general = {
           lock_cmd = "pidof hyprlock || hyprlock";
+          on_unlock_cmd = "systemctl -- user restart noctalia.service";
           before_sleep_cmd = "loginctl lock-session";
           after_sleep_cmd = "hyprctl dispatch dpms on && systemctl --user restart xdg-desktop-portal-hyprland.service";
         };

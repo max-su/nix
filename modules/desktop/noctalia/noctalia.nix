@@ -11,7 +11,7 @@ let
     programs.noctalia = {
       enable = true;
       package = inputs.noctalia.packages.${pkgs.system}.default;
-      systemd.enable = false;
+      systemd.enable = true;
       settings = {
         widget.clock = {
           format = "{:%A} {:%H:%M}";
