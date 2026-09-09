@@ -17,6 +17,7 @@ let
         gc = "git commit";
         gd = "git diff";
         gp = "git push";
+        gpp = "git pull";
         pbcopy = "wl-copy";
         lc = "mv ~/Downloads/lc.pdf";
       };
