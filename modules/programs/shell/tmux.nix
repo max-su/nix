@@ -11,7 +11,7 @@ let
       enable = true;
       extraConfig = ''
         set -g @plugin 'tmux-plugins/tpm'
-        set -g @plugin 'rose-pine/tmux'
+        set -g @plugin 'TanglingTreats/tmux-everforest'
         set -g @plugin 'vaaleyard/tmux-dotbar'
         set -g @plugin 'christoomey/vim-tmux-navigator'
         set -g @plugin 'tmux-plugins/tmux-resurrect'
@@ -38,41 +38,15 @@ let
         bind k select-pane -U
         bind l select-pane -R
 
-        # Rose Pine Theming
-        set -g @rose_pine_variant 'main'
-        set -g @rose_pine_host 'on'
-        set -g @rose_pine_hostname_short 'on'
-        set -g @rose_pine_date_time '%R'
-        set -g @rose_pine_user 'on'
-        set -g @rose_pine_directory 'on'
-        set -g @rose_pine_bar_bg_disable 'on'
-        set -g @rose_pine_only_windows 'on'
-        set -g @rose_pine_bar_bg_disabled_color_option 'default'
-        set -g @rose_pine_window_status_separator "  "
-        set -g @rose_pine_disable_active_window_menu 'on'
-        set -g @rose_pine_default_window_behavior 'on'
-        set -g @rose_pine_show_current_program 'on'
-        set -g @rose_pine_show_pane_directory 'on'
-        set -g @rose_pine_left_separator ' > '
-        set -g @rose_pine_right_separator ' < '
-        set -g @rose_pine_field_separator '  '
-        set -g @rose_pine_window_separator ' - '
-        set -g @rose_pine_session_icon '''
-        set -g @rose_pine_current_window_icon '''
-        set -g @rose_pine_folder_icon '''
-        set -g @rose_pine_username_icon '''
-        set -g @rose_pine_hostname_icon '󰒋'
-        set -g @rose_pine_date_time_icon '󰃰'
-        set -g @rose_pine_prioritize_windows 'on'
-        set -g @rose_pine_width_to_hide '80'
-        set -g @rose_pine_window_count '5'
+        # Everforest Theming
+        set -g @tmux-everforest 'dark-hard'
 
         # Dotbar Theming
-        set -g @tmux-dotbar-bg "#191724"
-        set -g @tmux-dotbar-fg "#6e6a86"
-        set -g @tmux-dotbar-fg-current "#e0def4"
-        set -g @tmux-dotbar-fg-session "#C86F87"
-        set -g @tmux-dotbar-fg-prefix "#c4a7e7"
+        set -g @tmux-dotbar-bg "#272E33"
+        set -g @tmux-dotbar-fg "#859289"
+        set -g @tmux-dotbar-fg-current "#D3C6AA"
+        set -g @tmux-dotbar-fg-session "#E67E80"
+        set -g @tmux-dotbar-fg-prefix "#D699B6"
 
         set-option -g renumber-windows on
         set -g base-index 1

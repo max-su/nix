@@ -146,6 +146,18 @@ let
             },
           }
         '';
+        bufferline = ''
+          return {
+            "akinsho/bufferline.nvim",
+            opts = {
+              highlights = {
+                fill = {
+                  bg = "NONE",
+                },
+              },
+            },
+          }
+        '';
       };
     };
   };
