@@ -296,6 +296,18 @@ let
             ];
           }
           {
+            _args = [
+              "SUPER + SHIFT + H"
+              (lib.generators.mkLuaInline ''hl.dsp.layout("splitratio -0.1")'')
+            ];
+          }
+          {
+            _args = [
+              "SUPER + SHIFT + L"
+              (lib.generators.mkLuaInline ''hl.dsp.layout("splitratio +0.1")'')
+            ];
+          }
+          {
             _args =[
               "ALT + 1"
               (lib.generators.mkLuaInline "hl.dsp.focus({ workspace = 1 })")
