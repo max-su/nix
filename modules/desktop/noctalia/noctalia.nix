@@ -42,8 +42,11 @@ let
         weather.unit = "imperial";
         theme = {
           mode = "dark";
-          source = "builtin";
-          builtin = "Rosé Pine";
+          # source = "builtin";
+          # builtin = "Rosé Pine";
+          source = "community";
+          builtin = "Mizuki-Akiyama";
+          pure_black_dark = true;
         };
       };
     };

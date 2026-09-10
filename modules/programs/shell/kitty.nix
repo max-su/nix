@@ -3,7 +3,7 @@ let
   homeManager = {
     programs.kitty = {
       enable = true;
-      themeFile = "rose-pine";
+      themeFile = "everforest_dark_hard";
       font = {
         name = "Codelia Nerd Font";
         size = 13;

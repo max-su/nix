@@ -81,12 +81,24 @@ let
       };
 
       plugins = {
+        # colorscheme = ''
+        #   return {
+        #     "rose-pine/neovim",
+        #     name = "rose-pine",
+        #     config = function()
+        #       vim.cmd("colorscheme rose-pine-moon")
+        #     end
+        #   }
+        # '';
         colorscheme = ''
           return {
-            "rose-pine/neovim",
-            name = "rose-pine",
+            "sainnhe/everforest",
+            lazy = false,
+            priority = 1000,
             config = function()
-              vim.cmd("colorscheme rose-pine-moon")
+              vim.g.everforest_background = "hard"
+              vim.opt.background = "dark"
+              vim.cmd("colorscheme everforest")
             end
           }
         '';
