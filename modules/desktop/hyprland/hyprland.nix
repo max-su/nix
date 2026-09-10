@@ -212,7 +212,7 @@ let
           {
             _args =[
               "ALT + Q"
-              (lib.generators.mkLuaInline ''hl.dsp.exec_cmd("firefox")'')
+              (lib.generators.mkLuaInline ''hl.dsp.exec_cmd("firefox-devedition")'')
             ];
           }
           {
