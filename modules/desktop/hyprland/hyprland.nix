@@ -272,6 +272,30 @@ let
         ];
         bind = [
           {
+            _args = [
+              "ALT + SHIFT + H"
+              (lib.generators.mkLuaInline ''hl.dsp.window.move({ direction = "l" })'')
+            ];
+          }
+          {
+            _args = [
+              "ALT + SHIFT + J"
+              (lib.generators.mkLuaInline ''hl.dsp.window.move({ direction = "d" })'')
+            ];
+          }
+          {
+            _args = [
+              "ALT + SHIFT + K"
+              (lib.generators.mkLuaInline ''hl.dsp.window.move({ direction = "u" })'')
+            ];
+          }
+          {
+            _args = [
+              "ALT + SHIFT + L"
+              (lib.generators.mkLuaInline ''hl.dsp.window.move({ direction = "r" })'')
+            ];
+          }
+          {
             _args =[
               "ALT + 1"
               (lib.generators.mkLuaInline "hl.dsp.focus({ workspace = 1 })")
