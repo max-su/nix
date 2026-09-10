@@ -13,6 +13,7 @@ let
         set -g @plugin 'tmux-plugins/tpm'
         set -g @plugin 'TanglingTreats/tmux-everforest'
         set -g @plugin 'vaaleyard/tmux-dotbar'
+        set -g @plugin 'sainnhe/tmux-fzf'
         set -g @plugin 'christoomey/vim-tmux-navigator'
         set -g @plugin 'tmux-plugins/tmux-resurrect'
         set -g @plugin 'tmux-plugins/tmux-continuum'
@@ -25,6 +26,10 @@ let
         unbind C-b
         set -g prefix C-a
         bind C-a send-prefix
+
+        # Default is find-window
+        unbind f
+        set-environment -g TMUX_FZF_LAUNCH_KEY "f"
 
         # Split panes with \ and -
         unbind '"'
