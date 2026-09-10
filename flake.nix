@@ -24,6 +24,10 @@
     };
 
     # General
+    zen-browser = {
+      url = "github:youwen5/zen-browser-flake";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
     lazyvim.url = "github:pfassina/lazyvim-nix";
     vicinae.url = "github:vicinaehq/vicinae";
     # Has MacOS support as well https://gerg-l.github.io/spicetify-nix/usage.html

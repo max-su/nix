@@ -77,6 +77,12 @@ let
           }
           {
             match = {
+              class = "zen";
+            };
+            suppress_event = "maximize";
+          }
+          {
+            match = {
               class = "vesktop";
             };
             suppress_event = "maximize";
@@ -211,8 +217,14 @@ let
           }
           {
             _args =[
-              "ALT + Q"
+              "ALT + SHIFT + Q"
               (lib.generators.mkLuaInline ''hl.dsp.exec_cmd("firefox-devedition")'')
+            ];
+          }
+          {
+            _args =[
+              "ALT + Q"
+              (lib.generators.mkLuaInline ''hl.dsp.exec_cmd("zen")'')
             ];
           }
           {

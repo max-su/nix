@@ -38,6 +38,7 @@ let
       maplestory-cursor
       python3
       pyright
+      inputs.zen-browser.packages.${pkgs.stdenv.hostPlatform.system}.default
 
       bat
       eza
