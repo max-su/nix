@@ -39,6 +39,7 @@ let
       python3
       pyright
       inputs.zen-browser.packages.${pkgs.stdenv.hostPlatform.system}.default
+      localsend
 
       bat
       eza

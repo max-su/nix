@@ -21,6 +21,9 @@
         config.flake.modules.nixos.codelia-font
       ];
 
+      networking.firewall.allowedTCPPorts = [ 53317 ];
+      networking.firewall.allowedUDPPorts = [ 53317 ];
+
       networking.hostName = "ellinia";
       # This records the on-disk schema from the original installation. Do not
       # bump it when updating nixpkgs; only change it for a deliberate reinstall.
