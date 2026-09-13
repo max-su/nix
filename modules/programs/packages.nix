@@ -40,6 +40,7 @@ let
       pyright
       inputs.zen-browser.packages.${pkgs.stdenv.hostPlatform.system}.default
       localsend
+      yt-dlp
 
       bat
       eza
