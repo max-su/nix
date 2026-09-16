@@ -214,11 +214,12 @@ let
       settings = {
         config = {
           general = {
-            gaps_out = 8;
+            gaps_in = 5;
+            gaps_out = 10;
           };
           decoration = {
             rounding = 10;
-            active_opacity = 0.8;
+            active_opacity = 0.85;
             inactive_opacity = 0.75;
           };
         };
