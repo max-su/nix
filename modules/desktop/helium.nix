@@ -1,11 +1,10 @@
 { inputs, ... }:
 let
-  nixos = {
+  nixos = { pkgs, ... }: {
     nixpkgs.overlays = [
-      helium-flake.overlays.default
+      inputs.helium-flake.overlays.default
     ];
-  };
-  homeManager = { pkgs, ... }: {
+
     imports = [
       inputs.helium-flake.nixosModules.default
     ];
@@ -22,7 +21,6 @@ let
       ];
 
       # 🎯 Policies - Written to /etc/chromium/policies/managed/helium-nixos.json
-      # Also written to /etc/helium/policies/managed/ for future compatibility
       # policies = {
       #   "BrowserSignin" = 0;
       #   "PasswordManagerEnabled" = false;
@@ -35,5 +33,4 @@ let
 in
 {
   flake.modules.nixos.base.imports = [ nixos ];
-  flake.modules.homeManager.frieren.imports = [ homeManager ];
 }

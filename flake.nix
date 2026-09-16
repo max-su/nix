@@ -39,6 +39,8 @@
       flake = false;
     };
     nix-yazi-flavors.url = "github:aguirre-matteo/nix-yazi-flavors";
+    helium-flake.url = "github:oxcl/nix-flake-helium-browser";
+    helium-flake.inputs.nixpkgs.follows = "nixpkgs";
   };
 
   outputs = inputs:
