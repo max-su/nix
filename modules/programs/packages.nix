@@ -38,6 +38,7 @@ let
       maplestory-cursor
       python3
       pyright
+      helium
       inputs.zen-browser.packages.${pkgs.stdenv.hostPlatform.system}.default
       localsend
       yt-dlp

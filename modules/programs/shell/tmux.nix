@@ -21,7 +21,7 @@ let
         set -g @resurrect-capture-pane-contents 'on'
         set -g @resurrect-strategy-nvim 'session'
         set -g @resurrect-processes 'nvim'
-        set -g default-terminal "screen-256color"
+        set -g default-terminal "tmux-256color"
 
         # Change prefix from Ctrl-b to Ctrl-a
         unbind C-b
