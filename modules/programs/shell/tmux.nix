@@ -21,6 +21,7 @@ let
         set -g @resurrect-capture-pane-contents 'on'
         set -g @resurrect-strategy-nvim 'session'
         set -g @resurrect-processes 'nvim'
+        set -g default-terminal "screen-256color"
 
         # Change prefix from Ctrl-b to Ctrl-a
         unbind C-b
@@ -73,7 +74,7 @@ let
         set -g @tmux-dotbar-ssh-enabled true
         set -g @tmux-dotbar-session-position "right"
         set -g @tmux-dotbar-rounded true
-        set -g @tmux-dotbar-session-text "#S 🌸 "
+        set -g @tmux-dotbar-session-text " 🌸 "
         set -g @tmux-dotbar-window-status-format " #I #W "
 
         run '~/.tmux/plugins/tpm/tpm'
