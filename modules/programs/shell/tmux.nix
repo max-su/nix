@@ -23,6 +23,15 @@ let
         set -g @resurrect-processes 'nvim'
         set -g default-terminal "tmux-256color"
 
+        set -g default-terminal "tmux-256color"
+
+        set -as terminal-features ",xterm-kitty:RGB"
+        set -as terminal-features ",xterm-kitty:Stylus"
+
+# Optional fallback if Stylus alone doesn't do it on your tmux version:
+        set -as terminal-overrides ',xterm-kitty:Smulx=\E[4::%p1%dm'
+        set -as terminal-overrides ',xterm-kitty:Setulc=\E[58:2::%p1%{65536}%/%d:%p1%{256}%/%d:%p1%{256}%m'
+
         # Change prefix from Ctrl-b to Ctrl-a
         unbind C-b
         set -g prefix C-a
