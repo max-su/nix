@@ -43,6 +43,8 @@ let
       localsend
       yt-dlp
 
+      gcc
+
       bat
       eza
     ];
