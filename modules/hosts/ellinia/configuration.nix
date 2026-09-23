@@ -21,6 +21,10 @@
         config.flake.modules.nixos.codelia-font
       ];
 
+      # Connect Android device
+      services.gvfs.enable = true;
+      services.udev.packages = [ pkgs.libmtp ];
+
       networking.firewall.allowedTCPPorts = [ 53317 ];
       networking.firewall.allowedUDPPorts = [ 53317 ];
 

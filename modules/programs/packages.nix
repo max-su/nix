@@ -49,6 +49,10 @@ let
 
       bat
       eza
+
+      kdePackages.dolphin
+      kdePackages.kio-extras # For network protocols, previews, etc.
+      kdePackages.qtsvg      # Required for proper SVG icon rendering
     ];
   };
 
