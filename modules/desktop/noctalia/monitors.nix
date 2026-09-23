@@ -13,7 +13,7 @@ let
     programs.noctalia.settings.wallpaper = {
       enabled = true;
       per_monitor_directories = true;
-      directory = self + "/assets";
+      directory = self + "/assets/Landscape";
       default.path = self + "/assets/Landscape/frieren_sky_flowers.jpg";
       monitor.DP-2 = {
         enabled = true;

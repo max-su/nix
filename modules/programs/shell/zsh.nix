@@ -22,6 +22,7 @@ let
         pbcopy = "wl-copy";
         lc = "mv ~/Downloads/lc.pdf";
         upnote = "nix-shell -p appimage-run --run \"appimage-run ~/.appimages/UpNote.AppImage\"";
+        wp = "noctalia msg panel-toggle wallpaper";
       };
       initContent = ''
         eval "$(jump shell)"
