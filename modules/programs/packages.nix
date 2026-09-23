@@ -43,6 +43,7 @@ let
       localsend
       yt-dlp
       zathura
+      readest
 
       gcc
 

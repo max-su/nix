@@ -18,8 +18,10 @@ let
         gd = "git diff";
         gp = "git push";
         gpp = "git pull";
+        gs = "git status";
         pbcopy = "wl-copy";
         lc = "mv ~/Downloads/lc.pdf";
+        upnote = "nix-shell -p appimage-run --run \"appimage-run ~/.appimages/UpNote.AppImage\"";
       };
       initContent = ''
         eval "$(jump shell)"
