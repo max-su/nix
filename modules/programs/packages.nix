@@ -46,6 +46,7 @@ let
       readest
 
       gcc
+      go_latest
 
       bat
       eza
