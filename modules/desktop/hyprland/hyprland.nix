@@ -441,13 +441,19 @@ let
           {
             _args =[
               "ALT + SHIFT + Q"
-              (lib.generators.mkLuaInline ''hl.dsp.exec_cmd("firefox-devedition")'')
+              (lib.generators.mkLuaInline ''hl.dsp.exec_cmd("helium")'')
             ];
           }
           {
             _args =[
               "ALT + Q"
               (lib.generators.mkLuaInline ''hl.dsp.exec_cmd("zen")'')
+            ];
+          }
+          {
+            _args =[
+              "ALT + F1"
+              (lib.generators.mkLuaInline ''hl.dsp.exec_cmd("firefox-devedition")'')
             ];
           }
           {
