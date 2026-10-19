@@ -14,7 +14,7 @@ let
       enabled = true;
       per_monitor_directories = true;
       directory = self + "/assets/Landscape";
-      default.path = self + "/assets/Landscape/frieren_sky_flowers.jpg";
+      default.path = self + "/assets/Landscape/alysa.png";
       monitor.DP-2 = {
         enabled = true;
         directory = self + "/assets/Vertical";
@@ -35,7 +35,7 @@ let
                   sleep 0.125
                 done
                 noctalia msg wallpaper-set DP-2 ~/.config/nix/assets/Vertical/casual_shorts.jpg
-                noctalia msg wallpaper-set DP-3 ~/.config/nix/assets/Landscape/frieren_sky_flowers.jpg
+                noctalia msg wallpaper-set DP-3 ~/.config/nix/assets/Landscape/alysa.png
               ]])
             end
           '')

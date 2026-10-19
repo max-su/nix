@@ -447,6 +447,12 @@ let
           {
             _args =[
               "ALT + Q"
+              (lib.generators.mkLuaInline ''hl.dsp.exec_cmd("helium")'')
+            ];
+          }
+          {
+            _args =[
+              "ALT + F1"
               (lib.generators.mkLuaInline ''hl.dsp.exec_cmd("zen")'')
             ];
           }

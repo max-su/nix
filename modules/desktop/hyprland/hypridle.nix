@@ -12,11 +12,11 @@ let
         };
         listener = [
           {
-            timeout = 300;
+            timeout = 1500;
             on-timeout = "loginctl lock-session";
           }
           {
-            timeout = 600;
+            timeout = 1800;
             on-timeout = "systemctl suspend";
           }
         ];

@@ -21,8 +21,10 @@ let
         gs = "git status";
         pbcopy = "wl-copy";
         lc = "mv ~/Downloads/lc.pdf";
+        mkd = "mkdir \"$(date +%F)\" && cd \"$(date +%F)\"";
         upnote = "nix-shell -p appimage-run --run \"appimage-run ~/.appimages/UpNote.AppImage\"";
         wp = "noctalia msg panel-toggle wallpaper";
+
       };
       initContent = ''
         eval "$(jump shell)"

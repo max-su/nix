@@ -44,6 +44,7 @@ let
       yt-dlp
       zathura
       readest
+      anki
 
       gcc
       go_latest
